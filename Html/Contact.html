@@ -45,7 +45,7 @@
   </br>
 </br>
       <section >
-        
+        <h2>Contact Me </h2>
         <div class="form-container">
             <form class="form">
               <div class="form-group">
@@ -60,6 +60,13 @@
             </form>
           </div>
       </section>
+      <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navList = document.querySelector('.navlist');
+        menuIcon.addEventListener('click', () => {
+          navList.classList.toggle('active');
+        });
+      </script>
       
 </body>
 </html>

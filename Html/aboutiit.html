@@ -173,6 +173,13 @@
             To learn more about our programs and admissions, visit our <a href="https://iit.tn/">About IIT page</a>.
         </p>
     </section>
-
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navList = document.querySelector('.navlist');
+        menuIcon.addEventListener('click', () => {
+          navList.classList.toggle('active');
+        });
+      </script>
+      
 </body>
 </html>
