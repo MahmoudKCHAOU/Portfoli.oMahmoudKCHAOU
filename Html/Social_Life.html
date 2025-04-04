@@ -255,11 +255,26 @@
     </section>
 
     <script>
-        const menuIcon = document.getElementById('menu-icon');
-        const navList = document.querySelector('.navlist');
-        menuIcon.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
+document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.getElementById('menu-icon');
+  const navList = document.getElementById('navlist');
+
+  if (menuIcon && navList) {
+    menuIcon.addEventListener('click', function() {
+      this.classList.toggle('bx-x');
+      navList.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    });
+
+    document.querySelectorAll('.navlist a').forEach(link => {
+      link.addEventListener('click', function() {
+        menuIcon.classList.remove('bx-x');
+        navList.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+  }
+});
     </script>
 </body>
 </html>

@@ -191,34 +191,27 @@
       </div>
     </div>
   </section>
-
   <script>
-    const menuIcon = document.getElementById('menu-icon');
-    const navList = document.querySelector('.navlist');
-    menuIcon.addEventListener('click', () => {
-      navList.classList.toggle('active');
-    });
-
-        // Menu mobile
-        const menuIcon1 = document.getElementById('menu-icon');
-    const navList1 = document.querySelector('.navlist');
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuIcon = document.getElementById('menu-icon');
+      const navList = document.getElementById('navlist');
     
-    menuIcon.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        menuIcon.classList.toggle('bx-x');
-    });
-
-    // Fermer le menu au clic sur un lien
-    document.querySelectorAll('.navlist a').forEach(link => {
-        link.addEventListener('click', () => {
-            navList.classList.remove('active');
-            menuIcon.classList.remove('bx-x');
+      if (menuIcon && navList) {
+        menuIcon.addEventListener('click', function() {
+          this.classList.toggle('bx-x');
+          navList.classList.toggle('active');
+          document.body.classList.toggle('no-scroll');
         });
-    });
-
-
-
     
-  </script>
+        document.querySelectorAll('.navlist a').forEach(link => {
+          link.addEventListener('click', function() {
+            menuIcon.classList.remove('bx-x');
+            navList.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+          });
+        });
+      }
+    });
+        </script>
 </body>
 </html>

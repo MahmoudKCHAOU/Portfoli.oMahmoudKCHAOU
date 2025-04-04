@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Mahmoud KCHAOU</title>
-  <link rel="stylesheet" href="../CSS/Pages.css">
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/Pages.css">
   <style>
     /* Styles spécifiques pour la page d'accueil */
     .hero {
@@ -15,7 +15,7 @@
       align-items: center;
       justify-content: space-between;
       min-height: 100vh;
-      padding: 0 7%;
+      padding: 0 15% 0 11%;
       position: relative;
       gap: 3rem;
     }
@@ -23,13 +23,16 @@
     .hero-content {
       flex: 1;
       max-width: 1000px;
+      text-align: left;
+      padding-right: 5%;
     }
 
     .hero-image {
       flex: 1;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       position: relative;
+      margin-right: 5%;
     }
 
     .profile-portrait {
@@ -69,37 +72,10 @@
       100% { transform: scale(1.05); opacity: 0.5; }
     }
 
-    /* Animation du texte */
-    .hero h4 {
-      font-size: 1.6rem;
-      color: var(--main-color);
-      margin-bottom: 1rem;
-      animation: fadeInDown 1s ease;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin: 1rem 0;
-      line-height: 1.2;
-      background: linear-gradient(to right, var(--main-color), #4facfe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeIn 1.5s ease;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-      color: var(--other-color);
-      animation: fadeInUp 1s ease;
-    }
-
     /* Responsive */
     @media (max-width: 992px) {
-      .hero h1 {
-        font-size: 3rem;
+      .hero {
+        padding: 0 10%;
       }
       .profile-portrait {
         width: 300px;
@@ -111,14 +87,18 @@
       .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px;
+        padding: 100px 5% 0;
       }
       .hero-content {
         order: 2;
+        padding-right: 0;
+        margin-left: 0 !important;
       }
       .hero-image {
         order: 1;
         margin-bottom: 3rem;
+        justify-content: center;
+        margin-right: 0;
       }
       .profile-portrait {
         width: 250px;
@@ -129,15 +109,6 @@
         height: 300px;
       }
     }
-
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .hero h4 {
-        font-size: 1.3rem;
-      }
-    }
   </style>
 </head>
 
@@ -145,27 +116,26 @@
   <header>
     <a href="#" class="logo">Portfolio <span>.O</span></a>
     <div class="bx bx-menu" id="menu-icon"></div>
-    <ul class="navlist">
-        <li><a href="../Html/home.html" class="active-nav">Home</a></li>
-        <li><a href="../Html/About.html">About</a></li>
-        <li><a href="../Html/Internships.html">Internships</a></li>
-        <li><a href="../Html/Skills.html">Skills</a></li>
-        <!-- <li><a href="../Html/Projects.html">Projects</a></li> -->
-        <li><a href="../Html/Social_Life.html">Social Life</a></li>
-        <li><a href="../Html/Interests.html">Interests</a></li>
+    <ul class="navlist" id="navlist">
+      <li><a href="../Html/home.html" class="active-nav">Home</a></li>
+      <li><a href="../Html/About.html">About</a></li>
+      <li><a href="../Html/Internships.html">Internships</a></li>
+      <li><a href="../Html/Skills.html">Skills</a></li>
+      <li><a href="../Html/Social_Life.html">Social Life</a></li>
+      <li><a href="../Html/Interests.html">Interests</a></li>
     </ul>
-</header>
+  </header>
 <br>
 <br>
+
   <section class="hero" id="home">
-    <div class="hero-content" style="margin-left: 4%">
-      
-      <h4 style="color: white ">Hello, I'm</h4>
-      <h1>Mahmoud <span style="color: white " >KCHAOU</span></h1>
+    <div class="hero-content">
+      <h4 style="color: white">Hello, I'm</h4>
+      <h1>Mahmoud <span style="color: white">KCHAOU</span></h1>
       <p>
         Computer Engineering student passionate about innovative solutions and cutting-edge technologies.<br>
-        Seeking a <strong>work-study position or full-time opportunity</strong> where I can apply my technical skills and problem-solving mindset. Eager to contribute value to dynamic teams while continuing to grow professionally in a collaborative environment.
-    </p>
+        Seeking a <strong>work-study position or full-time opportunity</strong> where I can apply my technical skills and problem-solving mindset.
+      </p>
       
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/mahmoud-kchaou/" target="_blank" aria-label="LinkedIn">
@@ -181,45 +151,42 @@
           <i class="ri-instagram-fill"></i>
         </a>
       </div>
-    </br>
-    
-    <div class="hero-buttons">
-      <a href="../Papier/Mahmoud_KCHAOU_CV.pdf" download class="btn">
-        <i class="ri-download-line"></i> Download CV
-      </a>
-      <a href="mailto:mahmoud.kchaou@iit.ens.tn?subject=Contact%20from%20Portfolio" class="btn">
-        <i class="ri-mail-send-line"></i> Contact Me
-      </a>
-    </div>
+      
+      <div class="hero-buttons">
+        <a href="../Papier/Mahmoud_KCHAOU_CV.pdf" download class="btn">
+          <i class="ri-download-line"></i> Download CV
+        </a>
+        <a href="mailto:mahmoud.kchaou@iit.ens.tn?subject=Contact%20from%20Portfolio" class="btn">
+          <i class="ri-mail-send-line"></i> Contact Me
+        </a>
+      </div>
     </div>
     
     <div class="hero-image">
-      <!-- Remplacez "professional-portrait.jpg" par le chemin de votre photo -->
       <img src="../img/professional-portrait.png" alt="Mahmoud KCHAOU - Computer Engineer" class="profile-portrait">
     </div>
   </section>
 
   <script>
-    const menuIcon = document.getElementById('menu-icon');
-    const navList = document.querySelector('.navlist');
-    
-    menuIcon.addEventListener('click', () => {
-      navList.classList.toggle('active');
-    });
-    
-    // Animation au scroll
-    document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-          }
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuIcon = document.getElementById('menu-icon');
+      const navList = document.getElementById('navlist');
+
+      if (menuIcon && navList) {
+        menuIcon.addEventListener('click', function() {
+          this.classList.toggle('bx-x');
+          navList.classList.toggle('active');
+          document.body.classList.toggle('no-scroll');
         });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.hero-content > *, .hero-image').forEach(el => {
-        observer.observe(el);
-      });
+
+        document.querySelectorAll('.navlist a').forEach(link => {
+          link.addEventListener('click', function() {
+            menuIcon.classList.remove('bx-x');
+            navList.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+          });
+        });
+      }
     });
   </script>
 </body>
