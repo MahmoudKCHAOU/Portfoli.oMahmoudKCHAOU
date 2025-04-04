@@ -1,121 +1,288 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes Compétences</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <title>Professional Skills | Portfolio</title>
   <link rel="stylesheet" href="../CSS/Skills.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Styles spécifiques pour la page d'accueil */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      padding: 0 7%;
+      position: relative;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 1000px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .profile-portrait {
+      width: 350px;
+      height: 350px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 5px solid var(--main-color);
+      box-shadow: 0 20px 50px rgba(19, 187, 255, 0.2);
+      transform: perspective(1000px) rotateY(-10deg);
+      transition: all 0.5s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-portrait:hover {
+      transform: perspective(1000px) rotateY(0deg);
+      box-shadow: 0 25px 60px rgba(19, 187, 255, 0.3);
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, var(--main-color), transparent);
+      top: -20px;
+      left: -20px;
+      z-index: 0;
+      opacity: 0.3;
+      animation: pulse 8s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.3; }
+      100% { transform: scale(1.05); opacity: 0.5; }
+    }
+
+    /* Animation du texte */
+    .hero h4 {
+      font-size: 1.6rem;
+      color: var(--main-color);
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      line-height: 1.2;
+      background: linear-gradient(to right, var(--main-color), #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--other-color);
+      animation: fadeInUp 1s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .profile-portrait {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .hero-content {
+        order: 2;
+      }
+      .hero-image {
+        order: 1;
+        margin-bottom: 3rem;
+      }
+      .profile-portrait {
+        width: 250px;
+        height: 250px;
+      }
+      .hero-image::before {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero h4 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <header>
-    <a href="#" class="logo">Portfoli <span>.O</span></a>
+    <a href="#" class="logo">Portfolio <span>.O</span></a>
     <div class="bx bx-menu" id="menu-icon"></div>
     <ul class="navlist">
-      <li><a href="../Html/home.html">Home</a></li>
-      <li><a href="../Html/About.html">About</a></li>
-      <li><a href="../Html/Projects.html">Projects</a></li>
-      <li><a href="../Html/Internships.html">Internships</a></li>
-      <li><a href="../Html/Social_Life.html">Social Life</a></li>
-      <li><a href="../Html/Interests.html">Interests</a></li>
-      <li><a href="../Html/Quizz.html">Quizz</a></li>
-      <li><a href="../Html/Contact.html">Contact</a></li>
+        <li><a href="../Html/home.html" >Home</a></li>
+        <li><a href="../Html/About.html">About</a></li>
+        <li><a href="../Html/Internships.html">Internships</a></li>
+        <li><a href="../Html/Skills.html" class="active-nav">Skills</a></li>
+        <!-- <li><a href="../Html/Projects.html">Projects</a></li> -->
+        <li><a href="../Html/Social_Life.html">Social Life</a></li>
+        <li><a href="../Html/Interests.html">Interests</a></li>
     </ul>
-    
-  </header>
+</header>
 
-  <section id="skills-section">
-    <h2>My skills : </h2>
-    
-    <div class="skills-category">
-      <h3><i class="ri-brush-fill"></i> Microsoft Technologies</h3>
-      <div class="skills">
-        <div class="skill">Power Apps</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Power Automate</div>
-        <div class="skill">Azure</div>
-        <div class="skill">SharePoint</div>
-        <div class="skill">Word</div>
-        <div class="skill">Excel</div>
-        <div class="skill">PowerShell</div>
-        <div class="skill">Power Query</div>
+  <section class="skills-section">
+    <div class="skills-header">
+      <h1>Skills & Certification</h1>
+      
+    </div>
+
+    <div class="skills-container">
+      <!-- MICROSOFT TECHNOLOGIES -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class='bx bxl-microsoft'></i>
+          <h2>MICROSOFT TECHNOLOGIES</h2>
+        </div>
+        <div class="skills-list">
+          <span>Power Apps</span>
+          <span>Power BI</span>
+          <span>Power Automate</span>
+          <span>Azure</span>
+          <span>SharePoint</span>
+          <span>Word</span>
+          <span>Excel</span>
+          <span>PowerShell</span>
+        </div>
+      </div>
+
+      <!-- DESIGN -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class='bx bx-planet'></i>
+          <h2>DESIGN</h2>
+        </div>
+        <div class="skills-list">
+          <span>UML</span>
+          <span>Agile</span>
+          <span>Scrum</span>
+          <span>Jira</span>
+        </div>
+      </div>
+
+      <!-- DBMS -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class='bx bx-data'></i>
+          <h2>DBMS</h2>
+        </div>
+        <div class="skills-list">
+          <span>Oracle</span>
+          <span>MySQL</span>
+          <span>MongoDB</span>
+          <span>Azure MySQL</span>
+        </div>
+      </div>
+
+      <!-- FRONTEND -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class='bx bx-code-alt'></i>
+          <h2>FRONTEND</h2>
+        </div>
+        <div class="skills-list">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>React JS</span>
+        </div>
+      </div>
+
+      <!-- DESIGN TOOLS -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class='bx bx-palette'></i>
+          <h2>DESIGN TOOLS</h2>
+        </div>
+        <div class="skills-list">
+          <span>Canva</span>
+          <span>Photoshop</span>
+          <span>Illustrator</span>
+        </div>
+      </div>
+
+      <!-- PROGRAMMING LANGUAGES -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class='bx bx-code-curly'></i>
+          <h2>PROGRAMMING LANGUAGES</h2>
+        </div>
+        <div class="skills-list">
+          <span>C</span>
+          <span>Python</span>
+        </div>
+      </div>
+
+      <!-- OPERATING SYSTEMS -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class='bx bx-desktop'></i>
+          <h2>OPERATING SYSTEMS</h2>
+        </div>
+        <div class="skills-list">
+          <span>Windows</span>
+          <span>Unix</span>
+        </div>
       </div>
     </div>
-    <div class="skills-category">
-      <h3><i class="ri-projector-line"></i> Project Design</h3>
-      <div class="skills">
-        <div class="skill">UML</div>
-        <div class="skill">Méthode Agile</div>
-        <div class="skill">Méthode Scrum</div>
-        <div class="skill">Jira</div>
-      </div>
-    </div>
-    <div class="skills-category">
-      <h3><i class="ri-database-line"></i> Database Management Systems</h3>
-      <div class="skills">
-        <div class="skill">Oracle</div>
-        <div class="skill">MySQL</div>
-        <div class="skill">MongoDB</div>
-        <div class="skill">Azure MySQL</div>
-      </div>
-    </div>
-    <div class="skills-category">
-      <h3><i class="ri-code-line"></i> Frontend</h3>
-      <div class="skills">
-        <div class="skill">HTML5</div>
-        <div class="skill">CSS3</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">React JS</div>
-      </div>
-    </div>
-    <div class="skills-category">
-      <h3><i class="ri-bar-chart-line"></i> Data Analysis</h3>
-      <div class="skills">
-        <div class="skill">Hadoop</div>
-        <div class="skill">Hive</div>
-        <div class="skill">Data Mining</div>
-        <div class="skill">Pandas</div>
-        <div class="skill">Numpy</div>
-      </div>
-    </div>
-    <div class="skills-category">
-      <h3><i class="ri-checkbox-circle-line"></i> Test</h3>
-      <div class="skills">
-        <div class="skill">ISTQB</div>
-      </div>
-    </div>
-    <div class="skills-category">
-      <h3><i class="ri-image-line"></i> Design</h3>
-      <div class="skills">
-        <div class="skill">Canva</div>
-        <div class="skill">Photoshop</div>
-        <div class="skill">Illustrator</div>
-      </div>
-    </div>
-    <div class="skills-category">
-      <h3><i class="ri-terminal-line"></i> Desktop Programming Languages</h3>
-      <div class="skills">
-        <div class="skill">C</div>
-        <div class="skill">Python</div>
-      </div>
-    </div>
-    <div class="skills-category">
-      <h3><i class="ri-cogs-line"></i> Backend</h3>
-      <div class="skills">
-        <div class="skill">PHP5</div>
-        <div class="skill">Java</div>
-        <div class="skill">.NET Core</div>
-      </div>
-    </div>
-    <div class="skills-category">
-      <h3><i class="ri-computer-line"></i> Operating Systems</h3>
-      <div class="skills">
-        <div class="skill">Windows</div>
-        <div class="skill">Unix</div>
+
+    <!-- Certifications Section -->
+    <div class="certifications-section">
+      <h2>Certifications</h2>
+      <div class="certifications-grid">
+        <div class="certification-card">
+          <i class='bx bx-certificate'></i>
+          <h3>Power Platform Fundamentals (PL-900)</h3>
+        </div>
+        <div class="certification-card">
+          <i class='bx bx-certificate'></i>
+          <h3>Microsoft 365 Fundamentals (MS-900)</h3>
+        </div>
+        <div class="certification-card">
+          <i class='bx bx-certificate'></i>
+          <h3>Azure Fundamentals (AZ-900)</h3>
+        </div>
+        <div class="certification-card">
+          <i class='bx bx-certificate'></i>
+          <h3>AI Fundamentals (AI-900)</h3>
+        </div>
       </div>
     </div>
   </section>
+
   <script>
     const menuIcon = document.getElementById('menu-icon');
     const navList = document.querySelector('.navlist');
@@ -123,6 +290,5 @@
       navList.classList.toggle('active');
     });
   </script>
-  
 </body>
 </html>

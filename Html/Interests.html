@@ -1,100 +1,243 @@
-<!-- Interests.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <title>My Interests | Portfolio</title>
   <link rel="stylesheet" href="../CSS/About.css">
-
-  <!-- <link rel="stylesheet" href="../bootstrap.css"> -->
-  <!-- Box icons link -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  
-  <!-- Remix icons link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
-  
-  <!-- Google Fonts preconnect and link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Additional styles for interests page */
+    .interests-section {
+      padding: 120px 5% 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .interests-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .interests-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+      position: relative;
+    }
+
+    .interests-header h1::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--main-color);
+      margin: 20px auto;
+      border-radius: 2px;
+    }
+
+    .interests-header p {
+      color: var(--other-color);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .interests-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .interest-card {
+      background: var(--second-bg-color);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      border-top: 4px solid var(--main-color);
+    }
+
+    .interest-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .interest-card i {
+      font-size: 2.5rem;
+      color: var(--main-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .interest-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+
+    .interest-card ul {
+      text-align: left;
+      padding-left: 1.5rem;
+    }
+
+    .interest-card li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      list-style-type: none;
+    }
+
+    .interest-card li::before {
+      content: "▹";
+      position: absolute;
+      left: -1.25rem;
+      color: var(--main-color);
+    }
+
+    .gallery-section {
+      margin-top: 4rem;
+    }
+
+    .gallery-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--text-color);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 250px;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .interests-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <a href="#" class="logo">Portfolio <span>.O</span></a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <ul class="navlist">
+        <li><a href="../Html/home.html" >Home</a></li>
+        <li><a href="../Html/About.html">About</a></li>
+        <li><a href="../Html/Internships.html">Internships</a></li>
+        <li><a href="../Html/Skills.html">Skills</a></li>
+        <!-- <li><a href="../Html/Projects.html">Projects</a></li> -->
+        <li><a href="../Html/Social_Life.html">Social Life</a></li>
+        <li><a href="../Html/Interests.html" class="active-nav">Interests</a></li>
+    </ul>
+</header>
+<br>
 
-    <header>
-        <a href="#" class="logo">Portfoli <span>.O</span></a>
-        <div class="bx bx-menu" id="menu-icon"></div>
-        <ul class="navlist">
-          <li><a href="../Html/home.html">Home</a></li>
-          <li><a href="../Html/About.html">About</a></li>
-          <li><a href="../Html/Projects.html">Projects</a></li>
-          <li><a href="../Html/Internships.html">Internships</a></li>
-          <li><a href="../Html/Skills.html">Skills</a></li>
-          <li><a href="../Html/Social_Life.html">Social Life</a></li>
-          <li><a href="../Html/Quizz.html">Quizz</a></li>
-          <li><a href="../Html/Contact.html">Contact</a></li>
+  <section class="interests-section">
+    <div class="interests-header">
+      <h1>My Interests & Passions</h1>
+       </div>
+
+    <div class="interests-container">
+      <!-- Passions Card -->
+      <div class="interest-card">
+        <i class="ri-heart-2-fill"></i>
+        <h3>Creative Passions</h3>
+        <ul>
+          <li>Cultural exploration through travel</li>
+          <li>Artistic expression (painting & photography)</li>
+          <li>Scouting leadership & activities</li>
+          <li>Technology innovation</li>
         </ul>
-        
-    
-      </header>
-      <section class="about-section">
-        <div class="container">
-          <h1>About Me</h1>
-          <p>Learn about my passions, favorite sports, and the qualities that define my personality and work ethic.</p>
-    
-          <div class="about-container">
-            <!-- Passions -->
-            <div class="about-card">
-              <i class="ri-heart-fill"></i>
-              <h3>Passions</h3>
-              <ul>
-                <li>Traveling and exploring cultures</li>
-                <li>Artistic creation (painting, photography)</li>
-                <li>Scouts</li>
-              </ul>
-            </div>
-    
-            <!-- Favorite Sports -->
-            <div class="about-card">
-              <i class="ri-football-fill"></i>
-              <h3>Favorite Sports</h3>
-              <ul>
-                <li>Running</li>
-                <li>Hiking</li>
-                <li>Swimming</li>
-                <li>Yoga</li>
-              </ul>
-            </div>
-    
-            <!-- Qualities -->
-            <div class="about-card">
-              <i class="ri-star-fill"></i>
-              <h3>Qualities</h3>
-              <ul>
-                <li>Leadership</li>
-                <li>Teamwork</li>
-                <li>Creativity</li>
-                <li>Empathy</li>
-              </ul>
-            </div>
-          </div>
-    
-          <div class="photos-section">
-            <h2>Some Photos</h2>
-            <div class="photos-grid">
-              <img src="../img/OIP.jpg" alt="Mountain Adventure" >
-              <img src="../img/OIP (1).jpg" alt="Sports Moment">
-              <img src="../img/scoutt.jpg" alt="Artistic Creation">
-            </div>
-          </div>
+      </div>
+
+      <!-- Sports Card -->
+      <div class="interest-card">
+        <i class="ri-run-fill"></i>
+        <h3>Active Lifestyle</h3>
+        <ul>
+          <li>Long-distance running</li>
+          <li>Mountain hiking & trekking</li>
+          <li>Competitive swimming</li>
+        </ul>
+      </div>
+
+      <!-- Qualities Card -->
+      <div class="interest-card">
+        <i class="ri-star-smile-fill"></i>
+        <h3>Core Qualities</h3>
+        <ul>
+          <li>Visionary leadership</li>
+          <li>Collaborative teamwork</li>
+          <li>Creative problem-solving</li>
+          <li>Empathetic communication</li>
+          <li>Adaptive resilience</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery-section">
+      <h2>Moments That Inspire Me</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="../img/OIP.jpg" alt="Mountain Adventure">
+          <div class="gallery-caption">Exploring nature's beauty</div>
         </div>
-      </section>
-      <script>
-        const menuIcon = document.getElementById('menu-icon');
-        const navList = document.querySelector('.navlist');
-        menuIcon.addEventListener('click', () => {
-          navList.classList.toggle('active');
-        });
-      </script>
-      
+        <div class="gallery-item">
+          <img src="../img/OIP (1).jpg" alt="Sports Moment">
+          <div class="gallery-caption">Pushing physical limits</div>
+        </div>
+        <div class="gallery-item">
+          <img src="../img/scoutt.jpg" alt="Scouting Activity">
+          <div class="gallery-caption">Scouting leadership</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const navList = document.querySelector('.navlist');
+    menuIcon.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

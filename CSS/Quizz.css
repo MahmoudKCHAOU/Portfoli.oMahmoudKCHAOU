@@ -222,3 +222,42 @@
     color: var(--text-color);
   }
   
+
+  /* Icône menu - CACHÉ par défaut */
+#menu-icon {
+  font-size: 1.8rem;
+  color: var(--main-color);
+  cursor: pointer;
+  display: none; /* Caché sur desktop */
+}
+
+/* Afficher l'icône SEULEMENT sur mobile */
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block; /* Apparaît seulement sur mobile */
+  }
+
+  .navlist {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--second-bg-color);
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 30px;
+    transition: all 0.5s ease;
+  }
+
+  .navlist.active {
+    right: 0;
+  }
+}
+
+/* Menu toujours visible sur desktop */
+@media (min-width: 769px) {
+  .navlist {
+    display: flex !important; /* Force l'affichage */
+  }
+}

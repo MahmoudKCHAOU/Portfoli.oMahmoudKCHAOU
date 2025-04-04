@@ -1,71 +1,253 @@
-<!-- Internships.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Internships</title>
   <link rel="stylesheet" href="../CSS/About.css">
-
-  <!-- External Libraries -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Styles spécifiques pour la page d'accueil */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      padding: 0 7%;
+      position: relative;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 1000px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .profile-portrait {
+      width: 350px;
+      height: 350px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 5px solid var(--main-color);
+      box-shadow: 0 20px 50px rgba(19, 187, 255, 0.2);
+      transform: perspective(1000px) rotateY(-10deg);
+      transition: all 0.5s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-portrait:hover {
+      transform: perspective(1000px) rotateY(0deg);
+      box-shadow: 0 25px 60px rgba(19, 187, 255, 0.3);
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, var(--main-color), transparent);
+      top: -20px;
+      left: -20px;
+      z-index: 0;
+      opacity: 0.3;
+      animation: pulse 8s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.3; }
+      100% { transform: scale(1.05); opacity: 0.5; }
+    }
+
+    /* Animation du texte */
+    .hero h4 {
+      font-size: 1.6rem;
+      color: var(--main-color);
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      line-height: 1.2;
+      background: linear-gradient(to right, var(--main-color), #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--other-color);
+      animation: fadeInUp 1s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .profile-portrait {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .hero-content {
+        order: 2;
+      }
+      .hero-image {
+        order: 1;
+        margin-bottom: 3rem;
+      }
+      .profile-portrait {
+        width: 250px;
+        height: 250px;
+      }
+      .hero-image::before {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero h4 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <a href="#" class="logo">Portfolio <span>.O</span></a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <ul class="navlist">
+        <li><a href="../Html/home.html">Home</a></li>
+        <li><a href="../Html/About.html">About</a></li>
+        <li><a href="../Html/Internships.html" class="active-nav">Internships</a></li>
+        <li><a href="../Html/Skills.html">Skills</a></li>
+        <!-- <li><a href="../Html/Projects.html">Projects</a></li> -->
+        <li><a href="../Html/Social_Life.html">Social Life</a></li>
+        <li><a href="../Html/Interests.html">Interests</a></li>
+    </ul>
+</header>
 
-    <body>
-        <header>
-          <a href="#" class="logo">Portfoli <span>.O</span></a>
-          <div class="bx bx-menu" id="menu-icon"></div>
-          <ul class="navlist">
-            <li><a href="../Html/home.html">Home</a></li>
-            <li><a href="../Html/About.html">About</a></li>
-            <li><a href="../Html/Projects.html">Projects</a></li>
-            <li><a href="../Html/Skills.html">Skills</a></li>
-            <li><a href="../Html/Social_Life.html">Social Life</a></li>
-            <li><a href="../Html/Interests.html">Interests</a></li>
-            <li><a href="../Html/Quizz.html">Quizz</a></li>
-            <li><a href="../Html/Contact.html">Contact</a></li>
-          </ul>
-          
-        </header>
-
-  <!-- My Internships -->
-  <section id="academic-journey">
-  </br>
-</br>
-</br>
-    <h2>My Internships</h2>
+  <section id="internships">
+    <br><br><br><br><br>
+    <h2>My Professional Internships</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <h3>From June 2024 to August 2024</h3>
-        <h4>Microsoft 365 Development Intern </h4>
-        <p><strong>PROGED SOLUTIONS Sfax :
-          Focusing on Office 365, Power Automate, PowerShell, SharePoint, SPFx, Power Apps, and Excel.
-        </strong></p>
+        <img src="../../Portfoli.oMahmoudKCHAOU/img/pro.png" alt="PROGED SOLUTIONS" class="timeline-image">
+        <div class="timeline-content">
+          <h3>June 2024 - August 2024</h3>
+          <h4>Microsoft 365 Development Intern</h4>
+          <p><strong>PROGED SOLUTIONS, Sfax - Product Team Integration</strong></p>
+          
+          <p>As a key member of the Microsoft 365 development team, I mastered the full suite of productivity tools while directly contributing to client projects through:</p>
+          
+          <ul class="accomplishments">
+            <li>Full integration into the product development lifecycle within an Scrum team</li>
+            <li>Direct client interaction to gather requirements and demonstrate solutions</li>
+            <li>Development of custom business automation solutions using Power Platform and SharePoint</li>
+            <li>Implementation of complex workflows</li>
+          </ul>
+          
+          
+          
+          <div class="tech-tags">
+            <span>Office 365</span>
+            <span>Power Automate</span>
+            <span>PowerShell</span>
+            <span>SharePoint</span>
+            <span>SPFx</span>
+            <span>Power Apps</span>
+            <span>Client Relations</span>
+            <span>Scrum</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Stage 2024 -->
       <div class="timeline-item">
-        <h3>From February 2024 to June 2024</h3>
-        <h4>Development Intern </h4>
-        <p><strong>PROGED SOLUTIONS Sfax : Developing a Timesheet solution to manage work hours using tools such as ReactJS, .NET Core, Power BI, Azure DevOps and Azure MySQL.</strong></p>
+        <img src="../../Portfoli.oMahmoudKCHAOU/img/9.png" alt="PROGED SOLUTIONS" class="timeline-image">
+        <div class="timeline-content">
+          <h3>February 2024 - June 2024</h3>
+          <h4>Full Stack Development Intern</h4>
+          <p><strong>PROGED SOLUTIONS, Sfax</strong></p>
+          <p>Developed a comprehensive Timesheet management solution to centralize and synchronize data from Mantis, Azure DevOps and MS Project. Implemented automated data extraction and integration processes to improve data consistency and operational efficiency across teams.</p>
+          <ul class="accomplishments">
+            <li>Created ReactJS frontend with responsive UI/UX design</li>
+            <li>Developed RESTful APIs with ASP.NET Core</li>
+            <li>Integrated Power BI for advanced analytics and reporting</li>
+            <li>Configured Azure MySQL for secure data storage</li>
+          </ul>
+          <div class="tech-tags">
+            <span>ReactJS</span>
+            <span>ASP.NET Core</span>
+            <span>Power BI</span>
+            <span>Azure DevOps</span>
+            <span>Azure MySQL</span>
+            <span>REST API</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Stage 2023 -->
       <div class="timeline-item">
-        <h3>From June 2022 to August 2022</h3>
-        <h4>Microsoft Development Intern</h4>
-        <p><strong>PROGED SOLUTIONS Sfax : Developing an application to manage media using Microsoft tools. </strong></p>
+        <img src="../../Portfoli.oMahmoudKCHAOU/img/promedia.png" alt="PROGED SOLUTIONS" class="timeline-image">
+        <div class="timeline-content">
+          <h3>June 2023 - August 2023</h3>
+          <h4>Microsoft Development Intern</h4>
+          <p><strong>PROGED SOLUTIONS, Sfax</strong></p>
+          <p>Designed and implemented a media management application to streamline social media publication workflows for LinkedIn and Facebook. The solution included collaborative validation processes between team members and automated scheduling features.</p>
+          <ul class="accomplishments">
+            <li>Developed using Microsoft Power Apps for rapid application development</li>
+            <li>Automated workflows with Power Automate</li>
+            <li>Created centralized data repository with SharePoint</li>
+            <li>Implemented interactive dashboards with Power BI</li>
+            <li>Integrated Microsoft Teams for team collaboration</li>
+          </ul>
+          <div class="tech-tags">
+            <span>Power Apps</span>
+            <span>Power Automate</span>
+            <span>SharePoint</span>
+            <span>Power BI</span>
+            <span>Microsoft Teams</span>
+            <span>Office 365</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
   <script>
     const menuIcon = document.getElementById('menu-icon');
-    const navList = document.querySelector('.navlist');
+    const navlist = document.querySelector('.navlist');
     menuIcon.addEventListener('click', () => {
-      navList.classList.toggle('active');
+      navlist.classList.toggle('active');
     });
   </script>
-  
 </body>
 </html>

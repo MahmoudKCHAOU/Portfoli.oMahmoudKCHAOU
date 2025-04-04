@@ -1,78 +1,226 @@
-<!-- home.html -->
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-
-  <!-- Lien vers la feuille de style externe -->
+  <title>Portfolio | Mahmoud KCHAOU</title>
   <link rel="stylesheet" href="../CSS/Pages.css">
-
-  <!-- Box icons -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  
-  <!-- Remix icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Styles spécifiques pour la page d'accueil */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      padding: 0 7%;
+      position: relative;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 1000px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .profile-portrait {
+      width: 350px;
+      height: 350px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 5px solid var(--main-color);
+      box-shadow: 0 20px 50px rgba(19, 187, 255, 0.2);
+      transform: perspective(1000px) rotateY(-10deg);
+      transition: all 0.5s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-portrait:hover {
+      transform: perspective(1000px) rotateY(0deg);
+      box-shadow: 0 25px 60px rgba(19, 187, 255, 0.3);
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, var(--main-color), transparent);
+      top: -20px;
+      left: -20px;
+      z-index: 0;
+      opacity: 0.3;
+      animation: pulse 8s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.3; }
+      100% { transform: scale(1.05); opacity: 0.5; }
+    }
+
+    /* Animation du texte */
+    .hero h4 {
+      font-size: 1.6rem;
+      color: var(--main-color);
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      line-height: 1.2;
+      background: linear-gradient(to right, var(--main-color), #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--other-color);
+      animation: fadeInUp 1s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .profile-portrait {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .hero-content {
+        order: 2;
+      }
+      .hero-image {
+        order: 1;
+        margin-bottom: 3rem;
+      }
+      .profile-portrait {
+        width: 250px;
+        height: 250px;
+      }
+      .hero-image::before {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero h4 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <a href="#" class="logo">Portfoli<span>.O</span></a>
+    <a href="#" class="logo">Portfolio <span>.O</span></a>
     <div class="bx bx-menu" id="menu-icon"></div>
     <ul class="navlist">
-      <li><a href="../Html/About.html">About</a></li>
-      <li><a href="../Html/Projects.html">Projects</a></li>
-      <li><a href="../Html/Internships.html">Internships</a></li>
-      <li><a href="../Html/Skills.html">Skills</a></li>
-      <li><a href="../Html/Social_Life.html">Social Life</a></li>
-      <li><a href="../Html/Interests.html">Interests</a></li>
-      <li><a href="../Html/Quizz.html">Quizz</a></li>
-      <li><a href="../Html/Contact.html">Contact</a></li>
+        <li><a href="../Html/home.html" class="active-nav">Home</a></li>
+        <li><a href="../Html/About.html">About</a></li>
+        <li><a href="../Html/Internships.html">Internships</a></li>
+        <li><a href="../Html/Skills.html">Skills</a></li>
+        <!-- <li><a href="../Html/Projects.html">Projects</a></li> -->
+        <li><a href="../Html/Social_Life.html">Social Life</a></li>
+        <li><a href="../Html/Interests.html">Interests</a></li>
     </ul>
-    
-  </header>
-
+</header>
+<br>
+<br>
   <section class="hero" id="home">
-    <div class="hero-content">
-      <br>
-      <h4>Hi, There!</h4>
-      <h1>I’m <span>Mahmoud KCHAOU</span></h1>
+    <div class="hero-content" style="margin-left: 4%">
+      
+      <h4 style="color: white ">Hello, I'm</h4>
+      <h1>Mahmoud <span style="color: white " >KCHAOU</span></h1>
       <p>
-        First-year student Computer Engineering, Seeking a work-study or employment opportunity. 
-        With a solid foundation in technical skills and a genuine passion for new technologies, 
-        I am eager to apply my knowledge to deliver value to your organization. My academic background has refined my analytical and problem-solving abilities, and I am prepared to embrace challenges in a dynamic professional environment while contributing effectively to the team's success.
-      </p>
-      <br>
+        Computer Engineering student passionate about innovative solutions and cutting-edge technologies.<br>
+        Seeking a <strong>work-study position or full-time opportunity</strong> where I can apply my technical skills and problem-solving mindset. Eager to contribute value to dynamic teams while continuing to grow professionally in a collaborative environment.
+    </p>
+      
       <div class="social-icons">
-        <a href="https://www.facebook.com/mahmoud.kchaou.988/" target="_blank"><i class="ri-facebook-fill"></i></a>
-        <a href="https://www.linkedin.com/in/mahmoud-kchaou/" target="_blank"><i class="ri-linkedin-fill"></i></a>
-        <a href="https://www.instagram.com/mahmoud_kchaou_/" target="_blank"><i class="ri-instagram-fill"></i></a>
+        <a href="https://www.linkedin.com/in/mahmoud-kchaou/" target="_blank" aria-label="LinkedIn">
+          <i class="ri-linkedin-fill"></i>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+          <i class="ri-github-fill"></i>
+        </a>
+        <a href="https://www.facebook.com/mahmoud.kchaou.988/" target="_blank" aria-label="Facebook">
+          <i class="ri-facebook-fill"></i>
+        </a>
+        <a href="https://www.instagram.com/mahmoud_kchaou_/" target="_blank" aria-label="Instagram">
+          <i class="ri-instagram-fill"></i>
+        </a>
       </div>
-      <br><br>
-      <div class="hero-buttons">
-        <a href="../Papier/Mahmoud_KCHAOU_CV.pdf" download class="btn">Download CV</a>
-      </div>
+    </br>
+    
+    <div class="hero-buttons">
+      <a href="../Papier/Mahmoud_KCHAOU_CV.pdf" download class="btn">
+        <i class="ri-download-line"></i> Download CV
+      </a>
+      <a href="mailto:mahmoud.kchaou@iit.ens.tn?subject=Contact%20from%20Portfolio" class="btn">
+        <i class="ri-mail-send-line"></i> Contact Me
+      </a>
+    </div>
+    </div>
+    
+    <div class="hero-image">
+      <!-- Remplacez "professional-portrait.jpg" par le chemin de votre photo -->
+      <img src="../img/professional-portrait.png" alt="Mahmoud KCHAOU - Computer Engineer" class="profile-portrait">
     </div>
   </section>
-  
 
   <script>
     const menuIcon = document.getElementById('menu-icon');
     const navList = document.querySelector('.navlist');
+    
     menuIcon.addEventListener('click', () => {
       navList.classList.toggle('active');
     });
+    
+    // Animation au scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.hero-content > *, .hero-image').forEach(el => {
+        observer.observe(el);
+      });
+    });
   </script>
-
-
-
 </body>
-
 </html>

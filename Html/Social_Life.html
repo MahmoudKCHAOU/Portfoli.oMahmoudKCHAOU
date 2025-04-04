@@ -1,82 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My social life - Active member of the Tunisian Scouts, member of the IEEE IIT Student Branch, event organizer, and member of several clubs and associations.">
-    <title>Social Life - Mahmoud KCHAOU</title>
+    <meta name="description" content="Social Engagement - Scout Leader and Media Manager at Tunisian Scouts, IEEE member, event organizer">
+    <title>Social Engagement | Portfolio</title>
     <link rel="stylesheet" href="../CSS/About.css">
-</head>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        .social-life {
+            padding: 120px 5% 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
+        .social-life h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .social-life h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--main-color);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--other-color);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .activity {
+            background: var(--second-bg-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--main-color);
+        }
+
+        .activity:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .activity-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .activity-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--main-color);
+            box-shadow: 0 0 15px rgba(19, 187, 255, 0.2);
+        }
+
+        .activity-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .role-badge {
+            background: rgba(19, 187, 255, 0.1);
+            color: var(--main-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--main-color);
+        }
+
+        .activity-text p {
+            color: var(--other-color);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .activity-content {
+                flex-direction: column;
+            }
+
+            .activity-image {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-life {
+                padding: 100px 3% 60px;
+            }
+
+            .activity {
+                padding: 1.5rem;
+            }
+        }
+
+        .achievement-highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgba(19, 187, 255, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--main-color);
+}
+
+.achievement-highlight i {
+    color: var(--main-color);
+    font-size: 1.2rem;
+}
+
+.achievement-highlight span {
+    font-size: 0.95rem;
+    color: var(--other-color);
+}
+
+.achievement-highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgba(19, 187, 255, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--main-color);
+}
+
+.achievement-highlight i {
+    color: var(--main-color);
+    font-size: 1.2rem;
+}
+
+.achievement-highlight span {
+    font-size: 0.95rem;
+    color: var(--other-color);
+}
+
+    </style>
+</head>
 <body>
     <header>
-        <a href="#" class="logo">Portfoli<span>.O</span></a>
+        <a href="#" class="logo">Portfolio <span>.O</span></a>
         <div class="bx bx-menu" id="menu-icon"></div>
         <ul class="navlist">
             <li><a href="../Html/home.html">Home</a></li>
             <li><a href="../Html/About.html">About</a></li>
-            <li><a href="../Html/Projects.html">Projects</a></li>
             <li><a href="../Html/Internships.html">Internships</a></li>
             <li><a href="../Html/Skills.html">Skills</a></li>
+            <!-- <li><a href="../Html/Projects.html">Projects</a></li> -->
+            <li><a href="../Html/Social_Life.html" class="active-nav" >Social Life</a></li>
             <li><a href="../Html/Interests.html">Interests</a></li>
-            <li><a href="../Html/Quizz.html">Quizz</a></li>
-            <li><a href="../Html/Contact.html">Contact</a></li>
-          </ul>
-          
-      </header>
+        </ul>
+    </header>
+    <br>
+
+
     <section class="social-life">
         <div class="container">
-            <h1>My Social Life</h1>
-            <p>Here are some of my contributions and involvement in various social and community activities:</p>
+            <h1>Social Life</h1>
 
-            <!-- Social activities sections -->
+
+            <!-- Tunisian Scouts -->
             <div class="activity">
                 <div class="activity-content">
                     <img src="../img/scouts-tunisians.jpg" alt="Tunisian Scouts" class="activity-image">
                     <div class="activity-text">
-                        <h2>Active Member of the Tunisian Scouts</h2>
-                        <p>Since 2018, I have been an active member of the Tunisian Scouts, participating in various volunteer activities and events to support the community.</p>
+                        <h2>
+                            <i class='bx bx-group'></i> Tunisian Scouts
+                            <span class="role-badge">Scout Leader</span>
+                            <span class="role-badge">Media Manager</span>
+                        </h2>
+                        <p>Active member since 2018, I've progressed to leadership roles within the Tunisian Scouts. As both Scout Leader and Media Manager, I guide young members in scouting activities while overseeing digital communication strategies.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- IEEE Section -->
             <div class="activity">
                 <div class="activity-content">
-                    <img src="../img/ieee-branch.jpg" alt="IEEE IIT Student Branch" class="activity-image">
+                    <img src="../img/ieee-branch.jpg" alt="IEEE IIT" class="activity-image">
                     <div class="activity-text">
-                        <h2>Member of the IEEE IIT Student Branch</h2>
-                        <p>I am part of the IEEE IIT Student Branch, where I participate in technical projects and scientific events organized by this globally recognized organization.</p>
+                        <h2>
+                            <i class='bx bx-chip'></i> IEEE IIT Student Branch
+                            <span class="role-badge">Organizing Team</span>
+                            <span class="role-badge">Member of the Month</span>
+                        </h2>
+                        <p>Active member of the organizing team for events at IEEE IIT. Recognized as "Member of the Month" for outstanding contributions and dedication to the Computer Society chapter.</p>
+                        
+                        <div class="achievement-highlight">
+                            <i class='bx bx-award'></i>
+                            <span>Honored as Member of the Month (March 2025) for remarkable efforts in IEEE CS activities</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- JPO ISIMS -->
             <div class="activity">
                 <div class="activity-content">
-                    <img src="../img/jpo-isims.jpg" alt="JPO ISIMS" class="activity-image">
+                    <img src="../img/jpo-isims.jpg" alt="ISIMS Open Day" class="activity-image">
                     <div class="activity-text">
-                        <h2>Organizer of the JPO ISIMS 2023/2024 Event</h2>
-                        <p>As an organizer, I took charge of planning and managing the Journée Portes Ouvertes (Open House Day) event at ISIMS for the year 2023/2024.</p>
+                        <h2><i class='bx bx-calendar-event'></i> ISIMS Open Day 2023/2024 Organizer</h2>
+                        <p>Coordinated the planning and execution of the ISIMS Open Day event, welcoming prospective students and presenting academic programs.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- SOS Village -->
             <div class="activity">
                 <div class="activity-content">
                     <img src="../img/sos-children-village.jpg" alt="SOS Children's Village" class="activity-image">
                     <div class="activity-text">
-                        <h2>Member of the SOS Children's Village Ambassadors Club</h2>
-                        <p>I am a member of the SOS Children's Village Ambassadors Club, an organization dedicated to protecting and supporting vulnerable children.</p>
+                        <h2><i class='bx bx-heart'></i> SOS Children's Village Ambassador</h2>
+                        <p>Member of the ambassador club for this organization dedicated to protecting and supporting vulnerable children.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- MTC Club -->
             <div class="activity">
                 <div class="activity-content">
-                    <img src="../img/mtc-club.jpg" alt="MTC ISIMS Club" class="activity-image">
+                    <img src="../img/mtc-club.jpg" alt="MTC Club" class="activity-image">
                     <div class="activity-text">
-                        <h2>Member of the MTC ISIMS Club</h2>
-                        <p>I am also a member of the MTC Club at ISIMS, where we organize events and cultural activities for students.</p>
+                        <h2><i class='bx bx-party'></i> MTC ISIMS Club</h2>
+                        <p>Active participant in organizing cultural events and student activities within this dynamic campus club.</p>
                     </div>
                 </div>
             </div>
@@ -87,10 +258,8 @@
         const menuIcon = document.getElementById('menu-icon');
         const navList = document.querySelector('.navlist');
         menuIcon.addEventListener('click', () => {
-          navList.classList.toggle('active');
+            navList.classList.toggle('active');
         });
-      </script>
-      
+    </script>
 </body>
-
 </html>
