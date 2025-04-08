@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/Pages.css">
+  <link rel="icon" href="../img/ME.png" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/ME.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/ME.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/ME.png">
+  <link rel="manifest" href="/site.webmanifest">
+
   <style>
     /* Styles spécifiques pour la page d'accueil */
     .hero {
@@ -114,15 +120,17 @@
 
 <body>
   <header>
-    <a href="#" class="logo">Portfolio <span>.O</span></a>
+    <a href="#" class="logo">Portfoli <span>.O</span></a>
     <div class="bx bx-menu" id="menu-icon"></div>
     <ul class="navlist" id="navlist">
       <li><a href="../Html/home.html" class="active-nav">Home</a></li>
       <li><a href="../Html/About.html">About</a></li>
       <li><a href="../Html/Internships.html">Internships</a></li>
       <li><a href="../Html/Skills.html">Skills</a></li>
+      <li><a href="../Html/Projects.html">Projects</a></li>
       <li><a href="../Html/Social_Life.html">Social Life</a></li>
       <li><a href="../Html/Interests.html">Interests</a></li>
+      
     </ul>
   </header>
 <br>
@@ -141,7 +149,7 @@
         <a href="https://www.linkedin.com/in/mahmoud-kchaou/" target="_blank" aria-label="LinkedIn">
           <i class="ri-linkedin-fill"></i>
         </a>
-        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/MahmoudKCHAOU?tab=overview&from=2025-04-01&to=2025-04-08" target="_blank" aria-label="GitHub">
           <i class="ri-github-fill"></i>
         </a>
         <a href="https://www.facebook.com/mahmoud.kchaou.988/" target="_blank" aria-label="Facebook">
@@ -168,26 +176,26 @@
   </section>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuIcon = document.getElementById('menu-icon');
-      const navList = document.getElementById('navlist');
+document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.getElementById('menu-icon');
+  const navList = document.getElementById('navlist');
 
-      if (menuIcon && navList) {
-        menuIcon.addEventListener('click', function() {
-          this.classList.toggle('bx-x');
-          navList.classList.toggle('active');
-          document.body.classList.toggle('no-scroll');
-        });
-
-        document.querySelectorAll('.navlist a').forEach(link => {
-          link.addEventListener('click', function() {
-            menuIcon.classList.remove('bx-x');
-            navList.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-          });
-        });
-      }
+  if (menuIcon && navList) {
+    menuIcon.addEventListener('click', function() {
+      this.classList.toggle('bx-x');
+      navList.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
     });
+
+    document.querySelectorAll('.navlist a').forEach(link => {
+      link.addEventListener('click', function() {
+        menuIcon.classList.remove('bx-x');
+        navList.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+  }
+});
   </script>
 </body>
 </html>

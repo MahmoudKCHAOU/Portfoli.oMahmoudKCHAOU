@@ -7,7 +7,13 @@
   <link rel="stylesheet" href="/Portfoli.oMahmoudKCHAOU/CSS/About.css">
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
+  <link rel="icon" href="../img/ME.png" type="image/x-icon">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/ME.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/ME.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/ME.png">
+  <link rel="manifest" href="/site.webmanifest">
+ <style>
     /* Styles spécifiques pour la page d'accueil */
     .hero {
       display: flex;
@@ -141,14 +147,14 @@
 </head>
 <body>
   <header>
-    <a href="#" class="logo">Portfolio <span>.O</span></a>
-    <div  id="menu-icon"></div>
-    <ul class="navlist">
+    <a href="#" class="logo">Portfoli <span>.O</span></a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <ul class="navlist" id="navlist">
         <li><a href="../Html/home.html" >Home</a></li>
         <li><a href="../Html/About.html" class="active-nav">About</a></li>
         <li><a href="../Html/Internships.html">Internships</a></li>
         <li><a href="../Html/Skills.html">Skills</a></li>
-        <!-- <li><a href="../Html/Projects.html">Projects</a></li> -->
+        <li><a href="../Html/Projects.html">Projects</a></li>
         <li><a href="../Html/Social_Life.html">Social Life</a></li>
         <li><a href="../Html/Interests.html">Interests</a></li>
     </ul>
@@ -192,26 +198,26 @@
     </div>
   </section>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuIcon = document.getElementById('menu-icon');
-      const navList = document.getElementById('navlist');
-    
-      if (menuIcon && navList) {
-        menuIcon.addEventListener('click', function() {
-          this.classList.toggle('bx-x');
-          navList.classList.toggle('active');
-          document.body.classList.toggle('no-scroll');
-        });
-    
-        document.querySelectorAll('.navlist a').forEach(link => {
-          link.addEventListener('click', function() {
-            menuIcon.classList.remove('bx-x');
-            navList.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-          });
-        });
-      }
+document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.getElementById('menu-icon');
+  const navList = document.getElementById('navlist');
+
+  if (menuIcon && navList) {
+    menuIcon.addEventListener('click', function() {
+      this.classList.toggle('bx-x');
+      navList.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
     });
+
+    document.querySelectorAll('.navlist a').forEach(link => {
+      link.addEventListener('click', function() {
+        menuIcon.classList.remove('bx-x');
+        navList.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+  }
+});
         </script>
 </body>
 </html>
