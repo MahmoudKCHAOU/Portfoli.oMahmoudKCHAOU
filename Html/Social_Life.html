@@ -177,7 +177,7 @@
             <li><a href="../Html/About.html">About</a></li>
             <li><a href="../Html/Internships.html">Internships</a></li>
             <li><a href="../Html/Skills.html">Skills</a></li>
-            <li><a href="../Html/Projects.html">Projects</a></li>
+            <li><a href="#">Projects</a></li>
             <li><a href="../Html/Social_Life.html" class="active-nav" >Social Life</a></li>
             <li><a href="../Html/Interests.html">Interests</a></li>
         </ul>
@@ -279,6 +279,24 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('no-scroll');
       });
     });
+  }
+});
+// Empêcher le clic droit
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  
+});
+
+// Bloquer F12, Ctrl+Shift+I, Ctrl+U, etc.
+document.addEventListener('keydown', (e) => {
+  if (
+    e.key === 'F12' ||
+    (e.ctrlKey && e.shiftKey && e.key === 'I') || // Ctrl+Shift+I
+    (e.ctrlKey && e.shiftKey && e.key === 'J') || // Ctrl+Shift+J
+    (e.ctrlKey && e.key === 'U') // Ctrl+U (afficher le code source)
+  ) {
+    e.preventDefault();
+    
   }
 });
     </script>
